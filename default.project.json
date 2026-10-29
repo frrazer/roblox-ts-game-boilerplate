@@ -1,0 +1,32 @@
+{
+	"name": "Game Boilerplate",
+	"servePort": 34873,
+	"globIgnorePaths": ["**/package.json", "**/tsconfig.json"],
+	"tree": {
+		"$className": "DataModel",
+		"$ignoreUnknownInstances": true,
+		"ReplicatedStorage": {
+			"$ignoreUnknownInstances": true,
+			"rbxts_include": {
+				"$path": "include",
+				"node_modules": {
+					"$className": "Folder",
+					"@rbxts": { "$path": "node_modules/@rbxts" },
+					"@flamework": { "$path": "node_modules/@flamework" }
+				}
+			},
+			"TS": { "$path": "out/shared" }
+		},
+		"ServerScriptService": {
+			"$ignoreUnknownInstances": true,
+			"TS": { "$path": "out/server" }
+		},
+		"StarterPlayer": {
+			"$ignoreUnknownInstances": true,
+			"StarterPlayerScripts": {
+				"$ignoreUnknownInstances": true,
+				"TS": { "$path": "out/client" }
+			}
+		}
+	}
+}
