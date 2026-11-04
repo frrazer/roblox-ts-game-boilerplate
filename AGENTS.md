@@ -37,6 +37,17 @@
 
 ## Setup and checks
 
+### When T3 Code manages this game
+
+If `game.json` exists at the root, T3 Code created and manages this game. That takes priority over the manual steps below:
+
+- Setup already ran when the game was created; run `npm install` only after changing packages.
+- `game.json` holds the game's Roblox `universeId`, `placeId` and `groupId`. `default.project.json` already lists the place in `servePlaceIds`.
+- T3 runs and restarts the Rojo server for you (on its own port, with Studio's Rojo plugin reconnecting by itself), along with the roblox-ts compiler in watch mode. Never run `npm run serve`, `npm run watch` or `rojo serve` yourself.
+- When you need Studio (UI, world building, Play tests), call the `t3_game_open_in_studio` tool, then work through the Roblox Studio MCP. If changes stop reaching Studio, call `t3_game_sync_status`.
+
+### Manual setup
+
 Prerequisites: [Node.js](https://nodejs.org) (LTS) and [Rokit](https://github.com/rojo-rbx/rokit). Rojo is pinned in `rokit.toml`.
 
 ```powershell
